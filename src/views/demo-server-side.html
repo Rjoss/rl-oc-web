@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Server Side Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+    {{component|safe}}
+
+    {# required to power the nested react component  #}
+    <script>
+        var oc = {
+            conf: {
+            templates: [{
+                "type": "oc-template-react",
+                "version": "2.0.12",
+                "externals": [{
+                "global": ["Object", "assign"],
+                "url": "//unpkg.com/es6-object-assign@1.1.0/dist/object-assign-auto.min.js",
+                "name": "Object.assign"
+                }, {
+                "global": "PropTypes",
+                "url": "//unpkg.com/prop-types@15.6.1/prop-types.min.js",
+                "name": "prop-types"
+                }, {
+                "global": "React",
+                "url": "//unpkg.com/react@16.4.0/umd/react.production.min.js",
+                "name": "react"
+                }, {
+                "global": "ReactDOM",
+                "url": "//unpkg.com/react-dom@16.4.0/umd/react-dom.production.min.js",
+                "name": "react-dom"
+                }]
+            }]
+            }
+        };
+    </script>
+    <script src="{{client_url}}"></script>
+</body>
+</html>

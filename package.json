@@ -1,0 +1,52 @@
+{
+  "name": "mock-generic-webserver",
+  "version": "1.0.0",
+  "description": "A mock webserver that simulates OpenComponents usage.",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --single-quote --write '{src,__{tests,mocks}__}/**/*.{js,css}'",
+    "start": "DEBUG=mock:* node index.js",
+    "start:dev": "DEBUG=mock:* nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "microsite",
+    "single",
+    "OpenComponents",
+    "component"
+  ],
+  "author": {
+    "name": "Ross Labardee",
+    "email": "ross@rosslabardee.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "",
+  "devDependencies": {
+    "eslint": "^4.6.1",
+    "eslint-config-airbnb": "^15.1.0",
+    "nodemon": "^1.12.0",
+    "prettier": "^1.6.1"
+  },
+  "dependencies": {
+    "debug": "^3.0.1",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.4",
+    "nunjucks": "^3.1.4",
+    "oc-client": "^2.1.26",
+    "oc-template-es6": "^1.0.1",
+    "oc-template-es6-compiler": "^1.1.3",
+    "oc-template-react": "^2.0.12",
+    "oc-template-react-compiler": "^5.1.4",
+    "serve-favicon": "^2.5.0"
+  },
+  "engines": {
+    "node": "10.x"
+  }
+}

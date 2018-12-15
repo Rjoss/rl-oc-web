@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Client Side Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <oc-component href="{{component_url}}"></oc-component>
+    <script>
+        // template config approach 1 of 1: via oc conf obj
+        const ocTemplate = [
+            {
+                "type": "oc-template-es6",
+                "externals": []
+            },
+            {
+                "type": "oc-template-react",
+                "externals": []
+            }
+        ]
+        // set "props" for react app to consume via the oc context params
+        const props = {
+            primary_title: "Client Side Primary",
+            primary_visible: true,
+            secondary_title: "Client Side Secondary",
+            secondary_visible: false,
+            tertiary_title: "Client Side Tertiary",
+            tertiary_visible: false
+        }
+        // pass configuration to oc
+        var oc = {
+            conf: {
+                templates: ocTemplate,
+                globalParameters: props
+            }
+        };
+        // init oc
+        window.oc = window.oc || {};
+        oc.cmd = oc.cmd || [];
+        // on oc load
+        oc.cmd.push(function(oc) {
+            console.log('oc is live', oc);
+        });
+    </script>
+    <script src="{{client_url}}"></script>
+</body>
+</html>
